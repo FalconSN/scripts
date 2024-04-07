@@ -5,7 +5,7 @@ cookies_file="$HOME/Cookies";
 host_key="$1";
 
 read -r name value domain path httponly expiration < <(
-sqlite3 "$cookie_file" << EOF
+sqlite3 "$cookies_file" << EOF
 .mode tabs
 select name,value,host_key,path,is_httponly,expires_utc
 from cookies
